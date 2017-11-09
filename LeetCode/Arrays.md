@@ -52,7 +52,6 @@
         int start = 0;
         int end = a.length - 1;
         while(start + 1 < end) {
-
             int mid = start + (end - start)/2;
             if(a[mid] == target)
                 return mid;
@@ -60,7 +59,6 @@
                 start = mid;
             else
                 end = mid;
-
         }
         if(target <= a[start])
             return start;
