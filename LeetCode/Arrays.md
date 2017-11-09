@@ -1,8 +1,8 @@
 # Arrays
 
 * P1 Two Sum: HashMap
-* P 167 Two Sum - sorted / P15 Three Sum / P16 Three Sum Closest / P18 Four Sum: Two Pointers
-   ```java
+* P 167 Two Sum - sorted / P15 Three Sum / P16 Three Sum Closest / P18 Four Sum: Two Pointers 
+   ```java
    public int[] twoSum(int[] numbers, int target) {
         int[] result = new int[2];
         
