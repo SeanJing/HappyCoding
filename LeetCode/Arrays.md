@@ -46,7 +46,30 @@
 * Binary Search:
    * find an element in a sorted array
    * find the first/last occurrence of an element in a sorted array
-   * P153 Find Minimum in Rotated Sorted Array 
+   * P35 Search Insert Position
+      ```java
+      public int searchInsert(int[] a, int target) {
+        int start = 0;
+        int end = a.length - 1;
+        while(start + 1 < end) {
+
+            int mid = start + (end - start)/2;
+            if(a[mid] == target)
+                return mid;
+            else if(a[mid] < target)
+                start = mid;
+            else
+                end = mid;
+
+        }
+        if(target <= a[start])
+            return start;
+        else if(target <= a[end])
+            return end;
+        else
+            return end+1;
+    }
+   * P153 Find Minimum in Rotated Sorted Array 
       ```java
        public int findMin(int[] nums) {
            int lo = 0;
