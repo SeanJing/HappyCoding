@@ -45,7 +45,54 @@
 
 * Binary Search:
    * find an element in a sorted array
-   * find the first/last occurrence of an element in a sorted array
+   * find the first/last occurrence of an element in a sorted array           
+     P34  Search for a Range
+      ```java
+      public int[] searchRange(int[] nums, int target) {
+        int[] result = new int[]{-1,-1};
+        if(nums == null || nums.length == 0) return result;
+        
+        int start = 0;
+        int end = nums.length - 1;
+        while(start + 1 < end) {
+            int mid = start + (end - start)/2;
+            if(nums[mid] == target)
+                end = mid;
+            else if (nums[mid] < target)
+                start = mid;
+            else 
+                end = mid;
+        }
+        
+        if(nums[start] == target)
+            result[0] = start;
+        else if (nums[end] == target)
+            result[0] = end;
+        else 
+            return result;
+        
+        start = 0; 
+        end = nums.length - 1;
+        
+        while(start + 1 < end) {
+            int mid = start + (end - start)/2;
+            if(nums[mid] == target)
+                start = mid;
+            else if (nums[mid] < target)
+                start = mid;
+            else 
+                end = mid;
+        }
+        
+        if(nums[end] == target)
+            result[1] = end;
+        else if (nums[start] == target)
+            result[1] = start;
+        else 
+            return result;
+        
+        return result;
+      }
    * P35 Search Insert Position 
       ```java
       public int searchInsert(int[] a, int target) {
@@ -67,23 +114,25 @@
         else
             return end+1;
       }
-   * P153 Find Minimum in Rotated Sorted Array 
+   * P153 Find Minimum in Rotated Sorted Array        
+     P154 Find Minimum in Rotated Sorted Array with duplicates
        ```java
-       public int findMin(int[] nums) {
-           int lo = 0;
-           int hi = nums.length - 1;
-
-           while(lo < hi) {
-               if(nums[lo] < nums[hi]) return nums[lo];
-               int mid = lo + (hi - lo)/2;
-               if(nums[mid] > nums[hi])
-                   lo = mid + 1;
-               else 
-                   hi = mid;
-           }
-
-           return nums[lo];
-       }    
+       public int findMin(int[] a) {
+        int start = 0;
+        int end = a.length - 1;
+        while(start+1 < end) {
+            int mid = start + (end - start)/2;
+            if(a[mid] > a[end])
+                start = mid;
+            else
+                end = mid;
+        }
+        
+        if(a[start] < a[end])
+            return a[start];
+        else 
+            return a[end];
+      }    
    * P33 Search in Rotated Sorted Array 
       ```java
       public int search(int[] nums, int target) {
