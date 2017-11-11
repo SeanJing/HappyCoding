@@ -170,5 +170,5 @@
    P55 Jump Game / P45 Jump Game II
    
  * Sorting           
-   P56 Merge intervals / P57 Insert Intervals
-   
+   P56 Merge intervals / P57 Insert Intervals            
+   [Interesting](https://www.jiuzhang.com/solution/insert-interval/)
