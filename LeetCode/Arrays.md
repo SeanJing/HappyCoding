@@ -165,5 +165,10 @@
         else
             return -1;
       }
-   * 
+  
+ * Greedy/Dynamic Programming            
+   P55 Jump Game / P45 Jump Game II
+   
+ * Sorting           
+   P56 Merge intervals / P57 Insert Intervals
    
