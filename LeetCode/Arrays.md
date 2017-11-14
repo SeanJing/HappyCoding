@@ -172,3 +172,25 @@
  * Sorting           
    P56 Merge intervals / P57 Insert Intervals            
    [Interesting](https://www.jiuzhang.com/solution/insert-interval/)
+   
+  * Dutch Flag Problem - P75 Sort Colors : Two Pointers
+   ```java
+   public void sortColors(int[] nums) {
+        int lt = 0; 
+        int gt = nums.length - 1;
+        int current = 0;
+        while(current <= gt) {
+            if(nums[current] == 1) {
+                current ++;
+            } else if (nums[current] == 0) {
+                swap(nums, lt, current);
+                lt++;
+                current++;
+            } else if(nums[current] == 2) {
+                swap(nums, gt, current);
+                gt--;
+            }
+        }
+    }
+ 
+ * 
