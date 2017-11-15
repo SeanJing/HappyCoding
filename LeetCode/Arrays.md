@@ -165,6 +165,8 @@
         else
             return -1;
       }
+    * Find Peak Element
+      
   
  * Greedy/Dynamic Programming            
    P55 Jump Game / P45 Jump Game II
@@ -193,4 +195,6 @@
            }
        }
  
- * 
+  * P169 Majority Element           
+    P229 Majority Element II
+    
