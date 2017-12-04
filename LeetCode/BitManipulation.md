@@ -57,4 +57,21 @@
         }
 
 * P190 Reverse Bits
-* P191 Number of 1 Bits / P231 Power of Two
+* P191 Number of 1 Bits / P231 Power of Two / P342 Power of Four
+    ```java
+    x & (x-1)
+
+* P201 Bitwise AND of Numbers Range
+    ```java
+    public int rangeBitwiseAnd(int m, int n) {
+        int cnt = 0;
+        while(m!=n) {
+            m>>=1;
+            n>>=1;
+            cnt++;
+        }
+        
+        return m<<cnt;
+    }
+
+* P371 Sum of Two Integers
