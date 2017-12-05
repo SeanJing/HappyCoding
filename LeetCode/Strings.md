@@ -45,3 +45,25 @@
 * P14 Longest Common Prefix
 
 * P17 Letter Combination of Phone Numbers - Backtracking
+* P22 Generate Patentheses - Backtracking
+    ```java
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+        char[] chars = new char[2*n];
+        helper(result, chars, n, 0,0,0);
+        return result;
+    }
+    
+    private void helper(List<String> result, char[] chars, int n, int pos, int left, int right) {
+        if(left == n && right == n)
+            result.add(new String(chars));
+        
+        if(left < n) {
+            chars[pos] = '(';
+            helper(result, chars, n, pos+1, left+1, right);
+        }
+        if(left > right) {
+            chars[pos] = ')';
+            helper(result, chars, n, pos+1, left, right+1);
+        }
+    }
