@@ -41,3 +41,5 @@
     private boolean isEqual(char s, char p) {
         return p=='.' || s == p;
     }
+
+* P14 Longest Common Prefix
