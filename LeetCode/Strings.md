@@ -44,8 +44,8 @@
 
 * P14 Longest Common Prefix
 
-* P17 Letter Combination of Phone Numbers - Backtracking
-* P22 Generate Patentheses - Backtracking
+* P17 Letter Combination of Phone Numbers - Backtracking/DFS
+* P22 Generate Patentheses - Backtracking/DFS
     ```java
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
@@ -67,3 +67,5 @@
             helper(result, chars, n, pos+1, left, right+1);
         }
     }
+
+* P28 Implement strStr - Two Pointers(early termination)
