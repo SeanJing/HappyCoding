@@ -68,4 +68,41 @@
         }
     }
 
+* P20 Valid Parentheses - Stack
+* P32 Longest Valid Parentheses - Stack / DP
+    ```java 
+    public int longestValidParentheses(String s) {
+        if(s == null || s.length() == 0) return 0;
+        Stack<Integer> stack = new Stack<>();
+        int max = 0;
+        for(int i = 0; i <s.length();i++) {
+            char c = s.charAt(i);
+            if(c == '(')
+                stack.push(i);
+            else {
+                if(!stack.isEmpty() && s.charAt(stack.peek()) == '(') {
+                    stack.pop();
+                    max = Math.max(max, stack.isEmpty() ? i+1 : i-stack.peek());
+                }
+                else
+                    stack.push(i);
+            }
+        }
+        return max;
+    }
+
 * P28 Implement strStr - Two Pointers(early termination)
+    ```java
+    public int strStr(String haystack, String needle) {
+        if(needle == null || needle.length() == 0) return 0;
+        for(int i = 0; i <= haystack.length() - needle.length(); i++) {
+            int j = 0;
+            for(; j<needle.length();j++)
+                if(needle.charAt(j) != haystack.charAt(i+j))
+                    break;
+            if(j == needle.length()) return i;
+        }
+        
+        return -1;
+    }
+* P30 Substring with Concatenation of All Words
