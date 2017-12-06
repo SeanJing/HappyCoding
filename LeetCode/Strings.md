@@ -41,6 +41,7 @@
     private boolean isEqual(char s, char p) {
         return p=='.' || s == p;
     }
+* P44 Wildcard Matching
 
 * P14 Longest Common Prefix
 
