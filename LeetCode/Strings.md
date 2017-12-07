@@ -107,3 +107,10 @@
         return -1;
     }
 * P30 Substring with Concatenation of All Words
+
+* P65 Valid Number - Regular Expression
+    ```java
+    public boolean isNumber(String s) {
+        return s.matches("^\\s*[-+]?((\\d+(\\.\\d*)?)|(\\.\\d+))(e[-+]?\\d+)?\\s*$");
+    }
+
