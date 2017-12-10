@@ -114,3 +114,21 @@
         return s.matches("^\\s*[-+]?((\\d+(\\.\\d*)?)|(\\.\\d+))(e[-+]?\\d+)?\\s*$");
     }
 
+* P76 Minimum Window Substring
+    ```java
+    public String minWindow(String s, String t) {
+        int[] map = new int[256];
+        for (char ch : t.toCharArray()) map[ch]++;
+
+        int start = 0, end = 0, d = Integer.MAX_VALUE, counter = 0, head = 0;
+        while (end < s.length()) {
+            if (map[s.charAt(end++)]-- > 0) counter++;
+            while (counter == t.length()) {
+                if (end - start < d) d = end - (head = start);
+                if (map[s.charAt(start++)]++ == 0) counter--;
+            }
+        }
+        return (d == Integer.MAX_VALUE) ? "" : s.substring(head, head + d);
+    }
+    
+
