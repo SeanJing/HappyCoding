@@ -132,3 +132,25 @@
     }
     
 * P93 Restore IP Addresses - Backtracking/DFS
+
+
+* P97 Interleaving String - DP
+* P115 Distinct Subsequences - DP
+
+* P157 Reverse words in a String - Reverse twice
+
+* P214 Shortest Palindrome 
+    ```java
+    public String shortestPalindrome(String s) {
+        int i = 0, end = s.length() - 1, j = end; char chs[] = s.toCharArray();
+        while(i < j) {
+             if (chs[i] == chs[j]) {
+                 i++; j--;
+             } else { 
+                 i = 0; end--; j = end;
+             }
+        }
+        return new StringBuilder(s.substring(end+1)).reverse().toString() + s;
+    }
+
+  
